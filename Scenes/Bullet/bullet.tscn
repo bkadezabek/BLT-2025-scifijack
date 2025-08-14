@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://37l13rsbny6b"]
+
+[ext_resource type="Script" uid="uid://coewv1s56o4dk" path="res://Scenes/Bullet/bullet.gd" id="1_v8qja"]
+[ext_resource type="Texture2D" uid="uid://tifno8r01jol" path="res://Slike/Red_Electric_Guitar_PNG_Clipart-894.png" id="2_lv0gj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rtl8c"]
+
+[node name="Bullet" type="Area2D" groups=["Bullet"]]
+script = ExtResource("1_v8qja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rtl8c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("2_lv0gj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

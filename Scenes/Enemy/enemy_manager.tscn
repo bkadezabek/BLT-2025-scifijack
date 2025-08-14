@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxii43hryqmte"]
+
+[ext_resource type="Script" uid="uid://bomrwbgedmoyn" path="res://Scenes/Enemy/enemy_manager.gd" id="1_dm0fj"]
+
+[node name="EnemyManager" type="Node"]
+script = ExtResource("1_dm0fj")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

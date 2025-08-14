@@ -24,3 +24,7 @@ func _physics_process(delta: float) -> void:
 	direction.y = Input.get_action_strength("DOWN") - Input.get_action_strength("UP")
 	velocity = direction.normalized() * speed
 	move_and_slide()
+	
+	var mouse_pos := get_global_mouse_position()
+	var dir := mouse_pos - global_position
+	rotation = dir.angle() + deg_to_rad(90)

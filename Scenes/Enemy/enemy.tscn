@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8qt70jcfqya2"]
+
+[ext_resource type="Script" uid="uid://d3vem2usw8xsf" path="res://Scenes/Enemy/enemy.gd" id="1_mw074"]
+[ext_resource type="Texture2D" uid="uid://hdent0ukahs1" path="res://Slike/enemy_A.png" id="2_dmwl5"]
+[ext_resource type="Texture2D" uid="uid://cb621kkxjubld" path="res://Slike/enemy_B.png" id="3_d40jh"]
+[ext_resource type="Texture2D" uid="uid://14cpxtgc06bg" path="res://Slike/enemy_C.png" id="4_gx76c"]
+[ext_resource type="Texture2D" uid="uid://c25cswfsw14x8" path="res://Slike/Aerosmith-PNG-HD.png" id="5_d40jh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nvvbs"]
+radius = 25.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_mw074")
+textures = Array[Texture2D]([ExtResource("2_dmwl5"), ExtResource("3_d40jh"), ExtResource("4_gx76c"), ExtResource("5_d40jh")])
+health_values = Array[int]([5, 10, 15])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nvvbs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_d40jh")
